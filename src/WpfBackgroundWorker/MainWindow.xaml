@@ -1,0 +1,15 @@
+﻿<mh:MetroWindow x:Class="WpfBackgroundWorker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBackgroundWorker"
+        xmlns:mh="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:dialogs="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        mh:DialogParticipation.Register="{Binding}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Name="ThreadControl" Content="Start Background Job" HorizontalAlignment="Left" Margin="143,120,0,0" VerticalAlignment="Top" Width="236" Click="ThreadControl_Click"/>
+    </Grid>
+</mh:MetroWindow>

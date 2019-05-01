@@ -7,7 +7,7 @@ namespace ManualResetEvent
 {
     internal class Program
     {
-        private static readonly System.Threading.ManualResetEvent manualResetEvent =
+        private static readonly System.Threading.ManualResetEvent ManualResetEvent =
             new System.Threading.ManualResetEvent(true);
 
 
@@ -17,10 +17,10 @@ namespace ManualResetEvent
             Runner();
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] press Any key to pause");
             Console.ReadKey();
-            manualResetEvent.Reset();
+            ManualResetEvent.Reset();
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] press Any key to continue");
             Console.ReadKey();
-            manualResetEvent.Set();
+            ManualResetEvent.Set();
             Console.ReadKey();
         }
 
@@ -31,9 +31,9 @@ namespace ManualResetEvent
             {
                 while (true)
                 {
-                    manualResetEvent.WaitOne();
+                    ManualResetEvent.WaitOne();
                     Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] {nameof(Runner)} has done operation {DateTime.Now:mm:ss.ms}");
-                    Task.Delay(TimeSpan.FromMilliseconds(500));
+                    Task.Delay(TimeSpan.FromMilliseconds(800));
                 }
             });
         }
